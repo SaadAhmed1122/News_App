@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+
+    tools:context=".News_Main">
+
+<!--    Loading Search Filter-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchRl">
+
+        <ProgressBar
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/ProgressBar"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:id="@+id/searchEt"
+            android:layout_toEndOf="@id/ProgressBar"
+            android:layout_toStartOf="@id/filterbtn"
+            android:hint="Search"
+            android:padding="8dp"
+            android:background="@drawable/shape_rect"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/colorBlack"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:id="@+id/filterbtn"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_filter_list"
+            android:layout_height="wrap_content"
+
+            />
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/sourcesRV"
+        tools:listitem="@layout/row_source_list"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>
